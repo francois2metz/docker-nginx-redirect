@@ -1,4 +1,4 @@
-FROM nginx:1.9.5
+FROM nginx:1.9
 MAINTAINER Julian Waller <git@julusian.co.uk>
 
 ADD default.conf /etc/nginx/sites-enabled/default
