@@ -1,0 +1,12 @@
+build: 
+  script:
+    # build docker image
+    - docker build --no-cache -t "registry.julus.uk/nginx-redirect:$CI_BUILD_REF" .
+    - docker tag -f "registry.julus.uk/nginx-redirect:$CI_BUILD_REF" "registry.julus.uk/nginx-redirect:latest"
+    - docker push "registry.julus.uk/nginx-redirect:$CI_BUILD_REF"
+    - docker push "registry.julus.uk/nginx-redirect:latest"
+  type: build
+  only: 
+    - master
+  tags: 
+    - docker-build
