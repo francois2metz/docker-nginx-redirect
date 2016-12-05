@@ -1,7 +1,7 @@
-FROM nginx:latest
+FROM nginx:alpine
 
-ADD default.conf /etc/nginx/conf.d/default.conf
-ADD start.sh /start.sh
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 CMD ["/start.sh"]
